@@ -9,10 +9,17 @@ class CommentApp extends Component {
             commentLists: []
         }
     }
+    componentWillMount() {
+        if (sessionStorage.commentList) {
+            this.setState({ commentLists: JSON.parse(sessionStorage.commentList) })
+        }
+    }
+    //删除评论
     deleteComment(index) {
         this.state.commentLists.splice(index, 1);
         this.setState({ commentLists: this.state.commentLists });
     }
+    //当子组件点击发送时触发
     handleSubmitComment(data) {
         this.state.commentLists.push(data);
         this.setState({ commentLists: this.state.commentLists });

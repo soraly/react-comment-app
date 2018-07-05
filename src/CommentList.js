@@ -12,11 +12,9 @@ class CommentList extends Component {
         if (this.props.onSubmit) {
             this.props.onSubmit(index);
         }
-        console.log(index, 'indexindex');
     }
     render() {
         var commentLists = this.props.commentlists;
-        console.log(commentLists, 'commentLists')
         if (commentLists.length) {
             return <div className='wrapper'>
                 {
